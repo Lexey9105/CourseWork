@@ -3,9 +3,6 @@ import java.util.Arrays;
 
 public class CourseWork {
 
-    //public static Employee[] SetId(Employee[] storage){
-        //for (int i=0;i< storage.length;i++){storage[i].setId();}
-//return .getId()=Employee.id;}
 
     public static void storageToString(Employee[] storage) {
         for (int i = 0; i < storage.length; i++) {
