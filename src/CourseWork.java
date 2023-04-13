@@ -11,13 +11,13 @@ public class CourseWork {
         return workerPrint;}
 
 
-    public static void storageToString(Employee[] storage) {
+    public static void StorageToString(Employee[] storage) {
         for (int i = 0; i < storage.length; i++) {
             System.out.println(storage[i]);
         }
     }
 
-    public static String printName(Employee [] storage){
+    public static String PrintName(Employee [] storage){
          String[] printWorker=new String[storage.length];
         for (int i=0;i<storage.length;i++){
             printWorker[i]=storage[i].getWorker();}
@@ -27,14 +27,14 @@ public class CourseWork {
         return workerPrint;
     }
 
-    public static int monthSalary(Employee[] storage){
+    public static int MonthSalary(Employee[] storage){
         int salaryMonth=0;
         for (int i=0;i<storage.length;i++){salaryMonth+=storage[i].getEmployeeSalary();}
         return salaryMonth;
     }
 
     public static String MinSalary(Employee[] storage) {
-        int salaryMin=monthSalary(storage);
+        int salaryMin=MonthSalary(storage);
         String workerMin="";
         for ( int i = 0; i < storage.length-1; i++){
             if (salaryMin>storage[i].getEmployeeSalary()){
@@ -54,19 +54,19 @@ public class CourseWork {
         return workerMax;
     }
 
-    public static double averageSalary(Employee[] storage){
+    public static double AverageSalary(Employee[] storage){
         int salaryMonth=0;
         for (int i=0;i<storage.length;i++){salaryMonth+=storage[i].getEmployeeSalary();}
         return (double)salaryMonth/storage.length;
     }
 
-    public static  Employee [] indexSalary(Employee[] storage){
+    public static  Employee [] IndexSalary(Employee[] storage){
         for (int i=0;i<storage.length;i++){storage[i].setEmployeeSalary(storage[i].getEmployeeSalary()+storage[i].getEmployeeSalary()/10);}
         return storage;
     }
 
     public static String MinDeptSalary(Employee[] storage,int x) {
-        int salaryMin=monthSalary(storage);
+        int salaryMin=MonthSalary(storage);
         String workerMin="";
         for (int i = 0; i < storage.length; i++) {
             if (storage[i].getEmployDept() == x) {
@@ -89,14 +89,14 @@ public class CourseWork {
 
         return workerMax;}
 
-    public static int monthDeptSalary(Employee[] storage,int x){
+    public static int MonthDeptSalary(Employee[] storage,int x){
         int salaryMonth=0;
         for (int i=0;i<storage.length;i++){if (storage[i].getEmployDept() == x)
             salaryMonth+=storage[i].getEmployeeSalary();}
         return salaryMonth;
     }
 
-    public static double averageDeptSalary(Employee[] storage,int x){
+    public static double AverageDeptSalary(Employee[] storage,int x){
         int salaryMonth=0;
         int [] v=new int[storage.length];
         int a=0;
@@ -106,12 +106,12 @@ public class CourseWork {
             v[i]=storage[i].getEmployeeSalary();if(v[i]!=0){b=b+1;}}
             }return (double)salaryMonth/b;}
 
-    public static  Employee [] indexDeptSalary(Employee[] storage,int x,int a){
+    public static  Employee [] IndexDeptSalary(Employee[] storage,int x,int a){
         for (int i=0;i<storage.length;i++){if (storage[i].getEmployDept() == x)
             storage[i].setEmployeeSalary(storage[i].getEmployeeSalary()+storage[i].getEmployeeSalary()/a);
         }return storage;}
 
-    public static String printDeptName(Employee[] storage,int x){
+    public static String PrintDeptName(Employee[] storage,int x){
         int b=0;
         String [] v=new String[storage.length];
         String[] printWorker=new String[b];
@@ -154,22 +154,22 @@ public class CourseWork {
                 storage[11] = new Employee(" Уламбек Нуруло ", 5, 100000);
 
 
-                storageToString(storage);
-                System.out.println(monthSalary(storage));
+                StorageToString(storage);
+                System.out.println(MonthSalary(storage));
                 System.out.println(MinSalary(storage));
                 System.out.println(MaxSalary(storage));
-                System.out.println(averageSalary(storage));
-                System.out.println(printName(storage));
-                indexSalary(storage);
+                System.out.println(AverageSalary(storage));
+                System.out.println(PrintName(storage));
+                IndexSalary(storage);
 
 
                 System.out.println(MinDeptSalary(storage,5));
                 System.out.println(MaxDeptSalary(storage, 5));
-                System.out.println(monthDeptSalary(storage, 2));
-                System.out.println(averageDeptSalary(storage, 2));
+                System.out.println(MonthDeptSalary(storage, 2));
+                System.out.println(AverageDeptSalary(storage, 2));
 
-                indexDeptSalary(storage,5,10);
-                System.out.println(printDeptName(storage, 5));
+                IndexDeptSalary(storage,5,10);
+                System.out.println(PrintDeptName(storage, 5));
 
 
                 System.out.println(MinWorkSalary(storage, 50000));
