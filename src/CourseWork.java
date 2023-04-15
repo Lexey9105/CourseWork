@@ -11,11 +11,11 @@ public class CourseWork {
         return workerPrint;}
 
 
-    public static void StorageToString(Employee[] storage) {
-        for (int i = 0; i < storage.length; i++) {
-            System.out.println(storage[i]);
-        }
-    }
+   // public static void StorageToString(Employee[] storage) {
+        //for (int i = 0; i < storage.length; i++) {
+            //System.out.println(storage[i]);
+        //}
+   // }
 
     public static String PrintName(Employee [] storage){
          String[] printWorker=new String[storage.length];
@@ -138,43 +138,68 @@ public class CourseWork {
 
 
 
-            public static void main (String[] args){
-                Employee[] storage = new Employee[12];
-                storage[0] = new Employee(" Кутин Владимир ", 1, 1000000);
-                storage[1] = new Employee(" Кутина Василиса ", 1, 999999);
-                storage[2] = new Employee(" Пупкина Александра ", 1, 700000);
-                storage[3] = new Employee(" Петрова Екатерина ", 2, 300000);
-                storage[4] = new Employee(" Александров Александр ", 2, 190000);
-                storage[5] = new Employee(" Степанов Станислав ", 3, 85000);
-                storage[6] = new Employee(" Иванова Анастасия ", 3, 65000);
-                storage[7] = new Employee(" Бурунов Владимир ", 4, 30000);
-                storage[8] = new Employee(" Трофимов Никита ", 4, 35000);
-                storage[9] = new Employee(" Назарбек Хасан ", 5, 85000);
-                storage[10] = new Employee(" Мансурбек Бибол ", 5, 81000);
-                storage[11] = new Employee(" Уламбек Нуруло ", 5, 100000);
+    public static    void main (String[] args){
+
+         Employee[] storageW = new Employee[12];
+        storageW[0] = new Employee(" Кутин Владимир ", 1, 1000000);
+        storageW[1] = new Employee(" Кутина Василиса ", 1, 999999);
+        storageW[2] = new Employee(" Пупкина Александра ", 1, 700000);
+        storageW[3] = new Employee(" Петрова Екатерина ", 2, 300000);
+        storageW[4] = new Employee(" Александров Александр ", 2, 190000);
+        storageW[5] = new Employee(" Степанов Станислав ", 3, 85000);
+        storageW[6] = new Employee(" Иванова Анастасия ", 3, 65000);
+        storageW[7] = new Employee(" Бурунов Владимир ", 4, 30000);
+        storageW[8] = new Employee(" Трофимов Никита ", 4, 35000);
+        storageW[9] = new Employee(" Назарбек Хасан ", 5, 85000);
+        storageW[10] = new Employee(" Мансурбек Бибол ", 5, 81000);
+        storageW[11] = new Employee(" Уламбек Нуруло ", 5, 100000);
+
+        EmployeeBook storage=new EmployeeBook();
+        storage.addWorker(" Кутин Владимир ", 1, 1000000);
+        storage.addWorker(" Кутина Василиса ", 1, 999999);
+        storage.addWorker(" Пупкина Александра ", 1, 700000);
+        storage.addWorker(" Петрова Екатерина ", 2, 300000);
+        storage.addWorker(" Александров Александр ", 2, 190000);
+        storage.addWorker(" Степанов Станислав ", 3, 85000);
+        storage.addWorker(" Иванова Анастасия ", 3, 65000);
+        storage.addWorker(" Бурунов Владимир ", 4, 30000);
+        storage.addWorker(" Трофимов Никита ", 4, 35000);
+        storage.addWorker(" Назарбек Хасан ", 5, 85000);
+        storage.addWorker(" Мансурбек Бибол ", 5, 81000);
+        storage.addWorker(" Уламбек Нуруло ", 5, 100000);
 
 
-                StorageToString(storage);
-                System.out.println(MonthSalary(storage));
-                System.out.println(MinSalary(storage));
-                System.out.println(MaxSalary(storage));
-                System.out.println(AverageSalary(storage));
-                System.out.println(PrintName(storage));
-                IndexSalary(storage);
 
 
-                System.out.println(MinDeptSalary(storage,5));
-                System.out.println(MaxDeptSalary(storage, 5));
-                System.out.println(MonthDeptSalary(storage, 2));
-                System.out.println(AverageDeptSalary(storage, 2));
+                //StorageToString(storageW);
+                System.out.println(MonthSalary(storageW));
+                System.out.println(MinSalary(storageW));
+                System.out.println(MaxSalary(storageW));
+                System.out.println(AverageSalary(storageW));
+                System.out.println(PrintName(storageW));
+                IndexSalary(storageW);
 
-                IndexDeptSalary(storage,5,10);
-                System.out.println(PrintDeptName(storage, 5));
+
+                System.out.println(MinDeptSalary(storageW,5));
+                System.out.println(MaxDeptSalary(storageW, 5));
+                System.out.println(MonthDeptSalary(storageW, 2));
+                System.out.println(AverageDeptSalary(storageW, 2));
+
+                IndexDeptSalary(storageW,5,10);
+                System.out.println(PrintDeptName(storageW, 5));
 
 
-                System.out.println(MinWorkSalary(storage, 50000));
-                System.out.println(MaxWorkSalary(storage, 50000));
+                System.out.println(MinWorkSalary(storageW, 50000));
+                System.out.println(MaxWorkSalary(storageW, 50000));
+storage.printDeptWorker(5);
 
+        storage.StorageToString();
+       storage.IndexSalary();
+       storage.MinDeptSalary(5);
+        storage.MaxDeptSalary(5);
+        storage.MonthDeptSalary( 5);
+        storage.AverageDeptSalary(5);
+        storage.PrintDeptName(5);
             }
     }
 
